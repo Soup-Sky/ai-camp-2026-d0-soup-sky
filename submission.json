@@ -4,7 +4,7 @@
   "members": [
     "汤家齐"
   ],
-  "repository_url": "https://github.com/Soup-Sky/ai-camp-2026-d0-tangjiaqi",
+  "repository_url": "https://github.com/Soup-Sky/ai-camp-2026-d0-soup-sky",
   "run_command": "python learning_plan_check.py learning-plan.json --course-root ..\\..",
   "test_command": "python -m unittest discover -s tests -v",
   "report": "report.md",
