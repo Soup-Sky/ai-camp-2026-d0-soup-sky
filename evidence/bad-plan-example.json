@@ -1,0 +1,45 @@
+{
+  "day": "Day 1",
+  "stages": [
+    {
+      "purpose": "data: verify the real file",
+      "course_file": "course/zh-CN/day-01-prediction/does-not-exist.md",
+      "action": "Run the data check.",
+      "expected_result": "REAL DATA CHECK PASSED",
+      "stop_condition": "Stop if the check fails.",
+      "minutes": 40
+    },
+    {
+      "purpose": "baseline: establish a comparison",
+      "course_file": "course/zh-CN/day-01-prediction/README.md",
+      "action": "Run the baseline.",
+      "expected_result": "metrics.json appears",
+      "stop_condition": "Stop if the file is missing.",
+      "minutes": 40
+    },
+    {
+      "purpose": "train one stronger model",
+      "course_file": "course/zh-CN/day-01-prediction/README.md",
+      "action": "Train the candidate.",
+      "expected_result": "candidate metrics appear",
+      "stop_condition": "Stop if training crashes.",
+      "minutes": 40
+    },
+    {
+      "purpose": "errors: inspect held-out mistakes",
+      "course_file": "course/zh-CN/day-01-prediction/README.md",
+      "action": "Open errors.csv.",
+      "expected_result": "At least one error row is visible.",
+      "stop_condition": "Stop if no errors file exists.",
+      "minutes": 40
+    },
+    {
+      "purpose": "finish: check evidence",
+      "course_file": "course/zh-CN/day-01-prediction/README.md",
+      "action": "Review all evidence.",
+      "expected_result": "All artifacts exist.",
+      "stop_condition": "Stop if any artifact is missing.",
+      "minutes": 40
+    }
+  ]
+}

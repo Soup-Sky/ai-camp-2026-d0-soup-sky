@@ -1,0 +1,10 @@
+test_complete_plan_passes (test_learning_plan_check.LearningPlanCheckTests.test_complete_plan_passes) ... ok
+test_long_plan_and_missing_purpose_are_reported (test_learning_plan_check.LearningPlanCheckTests.test_long_plan_and_missing_purpose_are_reported) ... ok
+test_missing_field_and_file_are_reported (test_learning_plan_check.LearningPlanCheckTests.test_missing_field_and_file_are_reported) ... ok
+test_non_positive_minutes_are_reported (test_learning_plan_check.LearningPlanCheckTests.test_non_positive_minutes_are_reported) ... ok
+test_valid_stage_has_no_errors (test_learning_plan_check.LearningPlanCheckTests.test_valid_stage_has_no_errors) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.025s
+
+OK

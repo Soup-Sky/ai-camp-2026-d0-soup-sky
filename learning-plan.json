@@ -1,0 +1,69 @@
+{
+  "day": "Day 1",
+  "stages": [
+    {
+      "purpose": "data: 复述问题，确认使用者、真实输入、输出、最重要错误与边界",
+      "course_file": "course/zh-CN/day-01-prediction/01-problem.md",
+      "action": "阅读 01-problem.md，填写六行：使用者、真实输入、需要输出、最简单基线、最危险错误、不能声称什么",
+      "expected_result": "每名组员能不看 AI 回答，在 45 秒内用自己的话复述七项内容",
+      "stop_condition": "任一成员无法复述问题或说不出最重要错误，停下并回到 01-problem.md",
+      "minutes": 10
+    },
+    {
+      "purpose": "data: 复制 starter，下载并验证真实 Titanic train.csv",
+      "course_file": "course/zh-CN/day-01-prediction/starter/README.md",
+      "action": "复制 starter 到 student-work/day-01-titanic，从指定 Kaggle 页面下载 train.csv 放到 data/raw/train.csv，运行 python train.py --check-data",
+      "expected_result": "REAL DATA CHECK PASSED；rows: 891；survived_counts: {0: 549, 1: 342}",
+      "stop_condition": "数据检查未通过或数量不一致时停下，检查当前目录、文件名和解压层级，禁止生成替代数据",
+      "minutes": 30
+    },
+    {
+      "purpose": "baseline: 安装依赖并保存未修改基线输出",
+      "course_file": "course/zh-CN/day-01-prediction/starter/train.py",
+      "action": "运行 python -m pip install -r requirements.txt，再运行 python train.py，保存完整输出",
+      "expected_result": "metrics.json 生成，baseline 有数值，candidate_todo 显示 NotImplementedError（预期 TODO）",
+      "stop_condition": "出现 ModuleNotFoundError、FileNotFoundError 或 ImportError 等环境错误时先修环境，不进入 TODO",
+      "minutes": 30
+    },
+    {
+      "purpose": "candidate: 追踪一条输入到输出并完成 build_candidate 小改动",
+      "course_file": "course/zh-CN/day-01-prediction/starter/train.py",
+      "action": "先读 build_baseline、preprocessor、make_split 和 evaluate，再只完成 build_candidate：在现有预处理后加入固定随机种子的 RandomForestClassifier",
+      "expected_result": "能指出一条乘客记录经过预处理、基线、候选和评估的路径；git diff 只包含 build_candidate 一处小改动",
+      "stop_condition": "智能体一次提出多处改动或出现无法解释的 diff 时停下，要求缩小为一个小步骤",
+      "minutes": 45
+    },
+    {
+      "purpose": "candidate: 运行测试验证候选流水线契约",
+      "course_file": "course/zh-CN/day-01-prediction/starter/tests/test_pipeline.py",
+      "action": "运行 python -m unittest discover -s tests -v，查看 Pipeline 与 prepare/model 步骤的断言",
+      "expected_result": "全部测试 OK，候选是 sklearn Pipeline 且包含 prepare 和 model 两个命名步骤",
+      "stop_condition": "测试失败时只读第一个失败的测试名、expected 和 actual，不删测试、不降低阈值",
+      "minutes": 25
+    },
+    {
+      "purpose": "errors: 同条件比较基线与候选并打开真实失败乘客",
+      "course_file": "course/zh-CN/day-01-prediction/starter/train.py",
+      "action": "再次运行 python train.py，打开 metrics.json 和 errors.csv，制作基线/候选比较表并选择一个真实误判乘客",
+      "expected_result": "比较表包含主指标、最重要错误和运行条件；至少记录一个真实假阴性案例及其不能证明的结论",
+      "stop_condition": "找不到失败案例或只有汇总分数时停下，回到 errors.csv 与 evaluate 代码",
+      "minutes": 20
+    },
+    {
+      "purpose": "finish: 完成可运行 README 与 report.md",
+      "course_file": "course/zh-CN/day-01-prediction/08-submission.md",
+      "action": "复制 templates/submission/daily-report-template.md 为 report.md，写入真实命令、输出和失败案例；README 写从零开始的运行路线",
+      "expected_result": "新同学只读 README 就能复现；report.md 中的数字与新一次运行输出一致",
+      "stop_condition": "命令与保存结果不一致时停下，重新运行并更新文档",
+      "minutes": 15
+    },
+    {
+      "purpose": "finish: 制作 3 分钟 PPT、建立独立仓库并邮件 URL",
+      "course_file": "course/zh-CN/day-01-prediction/08-submission.md",
+      "action": "复制每日 PPT 模板改四页，建立 Day 1 独立 GitHub 仓库，推送前逐项检查，学生本人发送邮件",
+      "expected_result": "仓库含 README、源码与测试、report.md、presentation.pptx、submission.json；邮件只写姓名/里程碑/URL/私有仓库访问",
+      "stop_condition": "git status 出现密钥或 data/raw 大数据时停下推送并通知教师",
+      "minutes": 5
+    }
+  ]
+}

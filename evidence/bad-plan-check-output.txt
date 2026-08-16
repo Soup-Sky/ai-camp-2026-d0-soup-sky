@@ -1,0 +1,4 @@
+LEARNING PLAN CHECK FAILED
+- stage 1 course_file does not exist below course root: course/zh-CN/day-01-prediction/does-not-exist.md
+- total minutes must be 180 or less, got 200
+- no stage purpose mentions required word: candidate
