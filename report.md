@@ -96,5 +96,5 @@ python learning_plan_check.py evidence\bad-plan-example.json --course-root ..\..
 - [x] `presentation.pptx` 在 3 分钟内讲完（4 页：问题/方法/证据/失败与限制）
 - [x] `submission.json` 路径正确
 - [x] 无密钥、大数据、私人信息、虚拟环境或缓存
-- [x] GitHub 仓库已创建并推送：https://github.com/Soup-Sky/ai-camp-2026-d0-soup-sky（public，分支 main；精确评阅 SHA 以教师工具记录为准）
+- [x] GitHub 仓库已创建并推送：https://github.com/Soup-Sky/ai-camp-2026-d0-tangjiaqi（public，分支 main；精确评阅 SHA 以教师工具记录为准）
 - [ ] 邮件发送 URL（需要学生本人登录邮箱完成；若老师要求，先把老师 GitHub 账号加入仓库 collaborator）
